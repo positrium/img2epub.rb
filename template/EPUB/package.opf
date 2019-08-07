@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package unique-identifier="pub-id" version="3.0" xmlns="http://www.idpf.org/2007/opf">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:identifier id="pub-id">urn:uuid:<%= uuid %></dc:identifier>
+        <dc:title><%= title %></dc:title>
+        <dc:language>ja-JP</dc:language>
+        <meta property="dcterms:modified"><%= modifiedAt %></meta>
+    </metadata>
+
+    <manifest>
+        <item id="nav" href="nav.xhtml" properties="nav" media-type="application/xhtml+xml" />
+        <item id="cover" href="./images/<%= cover_image %>" properties="cover-image" media-type="image/jpeg" />
+
+<% contents.each do |content| %>
+        <item id="doc<%= content[:name] %>" href="./<%= content[:name] %>.xhtml" media-type="application/xhtml+xml" />
+        <item id="img<%= content[:name] %>" href="./images/<%= content[:path] %>" media-type="image/jpeg" />
+<% end %>
+    </manifest>
+
+    <spine page-progression-direction="<%= direction %>">
+<% contents.each do |content| %>
+        <itemref idref="doc<%= content[:name] %>" /><% end %>
+    </spine>
+</package>
