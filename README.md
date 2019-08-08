@@ -1,4 +1,4 @@
-# jpg2epub.rb
+# img2epub.rb
 
 create epub document from jpeg files.
 
@@ -16,7 +16,7 @@ YOUR_JPG_DIRECTORY_NAME/
 ### usage
 
 ```
-$ bundle exec jpg2epub YOUR_JPG_DIRECTORY_NAME
+$ bundle exec img2epub.rb YOUR_JPG_DIRECTORY_NAME
 
 > document name:
     YOUR_JPG_DIRECTORY_NAME.epub
@@ -56,7 +56,7 @@ cover-image: cover.jpg
 - cover-image: cover image on epub reader.
 
 ```
-$ bundle exec jpg2epub YOUR_JPG_DIRECTORY_NAME
+$ bundle exec img2epub.rb YOUR_JPG_DIRECTORY_NAME
 
 > document name:
     myEpub.epub
